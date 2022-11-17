@@ -6,8 +6,9 @@ const content = document.querySelector('#content');
 function header() {
   const element = document.createElement('header');
 
-  const dandelionField = new Image();
-  dandelionField.src = DandelionField;
+  const dandelionField = document.createElement('div');
+  dandelionField.classList.add('header-image');
+  dandelionField.style.backgroundImage = `url('${DandelionField}')`;
 
   const headerText = document.createElement('div');
   headerText.classList.add('header-text');
@@ -21,8 +22,9 @@ function header() {
   headerText.appendChild(restaurantTitle);
   headerText.appendChild(restaurantContact);
 
+  dandelionField.appendChild(headerText);
+
   element.appendChild(dandelionField);
-  element.appendChild(headerText);
 
   return element;
 }
