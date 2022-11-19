@@ -34,11 +34,25 @@ body,
   background-color: rgba(255, 255, 255, 0.651);
 }
 
+/* --- MAIN --- */
+
+main {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+}
+
+/* --- ARTICLE --- */
+article {
+  width: 65%;
+}
+
 /* --- PRESENTATION --- */
 
 .presentation {
-  max-width: 500px;
-  margin: 10px auto;
+  max-width: 25%;
+  margin: 0 auto;
   border: 1px solid black;
   border-radius: 15px;
   box-sizing: border-box;

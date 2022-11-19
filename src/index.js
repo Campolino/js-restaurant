@@ -3,6 +3,7 @@ import DandelionFlower from './dandelion-flower.jpg';
 import './style.css';
 
 const content = document.querySelector('#content');
+const main = document.createElement('main');
 
 function header() {
   const element = document.createElement('header');
@@ -56,5 +57,13 @@ function section() {
   return dandelionFlower;
 }
 
+function article() {
+  const dandelionArticle = document.createElement('article');
+
+  return dandelionArticle;
+}
+
+main.appendChild(article());
+main.appendChild(section());
 content.appendChild(header());
-content.appendChild(section());
+content.appendChild(main);
