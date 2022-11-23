@@ -2,14 +2,34 @@ import DandelionField from './dandelion-field.jpg';
 import DandelionFlower from './dandelion-flower.jpg';
 import DandelionPesto from './beet-dandelion-pesto.jpg';
 import DandelionTempura from './dandelion-tempura-blooms.jpg';
+import DandelionSalad from './warm-potato-salad.jpg';
+import DandelionGreen from './dandelion-greens-and-onions.jpg';
 import './style.css';
 
 const content = document.querySelector('#content');
 const main = document.createElement('main');
 
 let cards = [
-  {'image': `${DandelionPesto}`, 'data': 'pesto'},
-  {'image': `${DandelionTempura}`, 'data': 'tempura'}
+  {
+    'image': `${DandelionPesto}`,
+    'data': 'pesto',
+    'recipe': 'Dandelion Pumpkin Seed Pesto'
+  },
+  {
+    'image': `${DandelionTempura}`, 
+    'data': 'tempura',
+    'recipe': 'Golden Dandelion Tempura Blooms'
+  },
+  {
+    'image': `${DandelionSalad}`,
+    'data': 'salad',
+    'recipe': 'Warm Potato Salad With Shallot Dressing'
+  },
+  {
+    'image': `${DandelionGreen}`, 
+    'data': 'green',
+    'recipe': 'Sautéed Spicy Dandelion Greens'
+  }
 ];
 
 function header() {
@@ -82,7 +102,14 @@ function card(cardInfo) {
   const cardPhoto = new Image();
   cardPhoto.src = cardInfo['image'];
 
+  const cardRecipe = document.createElement('div');
+  cardRecipe.textContent = cardInfo['recipe'];
+
+  const hr = document.createElement('hr');
+
   card.appendChild(cardPhoto);
+  card.appendChild(hr);
+  card.appendChild(cardRecipe);
 
   return card;
 }

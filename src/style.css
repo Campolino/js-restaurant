@@ -59,9 +59,22 @@ article {
 
 .card > img {
   width: 100%;
-  height: auto;
-  overflow: scroll;
+  height: 250px;
   border-radius: 15px;
+}
+
+.card > hr {
+  border: 0.5px solid black;
+}
+
+.card > div {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 2px 2px black;
+  cursor: pointer;
 }
 
 /* --- PRESENTATION --- */
