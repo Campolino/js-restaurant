@@ -1,9 +1,16 @@
 import DandelionField from './dandelion-field.jpg';
 import DandelionFlower from './dandelion-flower.jpg';
+import DandelionPesto from './beet-dandelion-pesto.jpg';
+import DandelionTempura from './dandelion-tempura-blooms.jpg';
 import './style.css';
 
 const content = document.querySelector('#content');
 const main = document.createElement('main');
+
+let cards = [
+  {'image': `${DandelionPesto}`, 'data': 'pesto'},
+  {'image': `${DandelionTempura}`, 'data': 'tempura'}
+];
 
 function header() {
   const element = document.createElement('header');
@@ -60,10 +67,28 @@ function section() {
 function article() {
   const dandelionArticle = document.createElement('article');
 
+  cards.forEach(cardInfo => {
+    dandelionArticle.appendChild(card(cardInfo));
+  });
+
   return dandelionArticle;
+}
+
+function card(cardInfo) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.setAttribute('data-card', `${cardInfo['data']}`);
+
+  const cardPhoto = new Image();
+  cardPhoto.src = cardInfo['image'];
+
+  card.appendChild(cardPhoto);
+
+  return card;
 }
 
 main.appendChild(article());
 main.appendChild(section());
+
 content.appendChild(header());
 content.appendChild(main);
