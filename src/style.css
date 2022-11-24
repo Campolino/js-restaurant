@@ -18,9 +18,9 @@ body,
   align-items: center;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.473);
+  padding: 10px;
 }
 
-#content > header > .header-image > .header-text > h1,
 #content > header > .header-image > .header-text > a {
   font-size: 1.2rem;
   padding: 5px 10px;
