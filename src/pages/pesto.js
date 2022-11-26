@@ -1,7 +1,10 @@
 import header from './header';
 import section from './section';
 
+import pestoImage from '../img/beet-dandelion-pesto.jpg';
+
 const pesto = {
+  'image': pestoImage,
   'recipe': 'Dandelion Pumpkin Seed Pesto',
   'ingredients': [
     '3/4 cup unsalted hulled (green) pumpkin seeds',
@@ -25,8 +28,8 @@ function body() {
   const content = document.querySelector('#content');
   const main = document.createElement('main');
 
+  main.appendChild(article());
   main.appendChild(section());
-  article();
 
   content.appendChild(header());
   content.appendChild(main);
@@ -35,9 +38,41 @@ function body() {
 }
 
 function article() {
+  /*
   console.log(`${pesto['recipe']}`);
   pesto['ingredients'].forEach(e => console.log(`${e}`));
   pesto['steps'].forEach(e => console.log(`${e}`));
+  */
+
+  const recipeArticle = document.createElement('article');
+
+  const recipeName = document.createElement('h1');
+  recipeName.textContent = pesto['recipe'];
+  
+  const recipe = document.createElement('div');
+
+  const recipeInfo = document.createElement('div');
+  
+  const recipeImage = new Image();
+  recipeImage.src = pesto['image'];
+
+  const recipeIngredients = document.createElement('ul');
+  pesto['ingredients'].forEach(ingredient => {
+      const ingre = document.createElement('li');
+      ingre.textContent = ingredient;
+      recipeIngredients.appendChild(ingre);
+    }
+  );
+
+  recipeInfo.appendChild(recipeImage);
+  recipeInfo.appendChild(recipeIngredients);
+
+  recipe.appendChild(recipeInfo);
+
+  recipeArticle.appendChild(recipeName);
+  recipeArticle.appendChild(recipe);
+
+  return recipeArticle;
 }
 
 export default body;
