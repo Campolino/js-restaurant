@@ -1,5 +1,6 @@
 import header from './header';
 import section from './section';
+import home from './home';
 
 import saladImage from '../img/warm-potato-salad.jpg';
 
@@ -30,6 +31,14 @@ function body() {
 
   content.appendChild(header());
   content.appendChild(main);
+
+  /* HOME BUTTON */
+  const homeButton = document.querySelector('.home-button');
+  homeButton.addEventListener('click', () => {
+    const content = document.querySelector('#content');
+    content.textContent = '';
+    home();
+  });
 
   return content;
 }

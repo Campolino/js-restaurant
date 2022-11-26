@@ -2,6 +2,12 @@ import header from './header';
 import section from './section';
 import cards from './cards';
 
+import pesto from './pesto';
+import tempura from './tempura';
+import salad from './salad';
+import green from './green';
+
+
 function home() {
   const content = document.querySelector('#content');
   const main = document.createElement('main');
@@ -11,6 +17,31 @@ function home() {
 
   content.appendChild(header());
   content.appendChild(main);
+
+  const cards = document.querySelectorAll('.card');
+  
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const content = document.querySelector('#content');
+      content.textContent = '';
+      switch(card.getAttribute('data-card')) {
+        case 'pesto':
+          pesto();
+          break;
+        case 'tempura':
+          tempura();
+          break;
+        case 'salad':
+          salad();
+          break;
+        case 'green':
+          green();
+          break;
+        default:
+          home();
+      }
+    });
+  });
 
   return content;
 }

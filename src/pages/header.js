@@ -11,13 +11,10 @@ function header() {
   headerText.classList.add('header-text');
 
   const restaurantTitle = document.createElement('a');
+  restaurantTitle.classList.add('home-button');
   restaurantTitle.textContent = 'Dandelion Foodie';
 
-  const restaurantContact = document.createElement('a');
-  restaurantContact.textContent = 'Contact Us';
-
   headerText.appendChild(restaurantTitle);
-  headerText.appendChild(restaurantContact);
 
   dandelionField.appendChild(headerText);
 
