@@ -1,26 +1,23 @@
 import header from './header';
 import section from './section';
 
-import pestoImage from '../img/beet-dandelion-pesto.jpg';
+import saladImage from '../img/warm-potato-salad.jpg';
 
-const pesto = {
-  'image': pestoImage,
-  'recipe': 'Dandelion Pumpkin Seed Pesto',
+const salad = {
+  'image': saladImage,
+  'recipe': 'Warm Potato Salad With Shallot Dressing',
   'ingredients': [
-    '3/4 cup unsalted hulled (green) pumpkin seeds',
-    '3 garlic cloves, minced',
-    '1/4 cup freshly grated Parmesan',
-    '1 bunch dandelion greens (about 2 cups, loosely packed)',
-    '1 tablespoon lemon juice',
-    '1/2 cup extra-virgin olive oil',
-    '1/2 teaspoon kosher salt',
-    'Black pepper, to taste'
+    '6 new potatoes, preferably Charlotte, Ratte and truffle salt',
+    '30ml olive oil, plus extra for drizzling',
+    '1 banana shallot, very finely chopped',
+    '25ml chardonnay vinegar',
+    '2 thyme sprigs, leaves only ',
+    '1 portion summer leaves (eg, rocket, sorrel, dandelion leaf, red chard leaf)'
   ],
   'steps': [
-    'Preheat the oven to 350°F. Pour the pumpkin seeds onto a shallow-rimmed baking sheet and roast until just fragrant, about 5 minutes. Remove from the oven and allow to cool.',
-    'Pulse the garlic and pumpkin seeds together in the bowl of a food processor until very finely chopped.',
-    'Add Parmesan cheese, dandelion greens, and lemon juice and process continuously until combined. Stop the processor every now and again to scrape down the sides of the bowl. The pesto will be very thick and difficult to process after awhile — that\'s ok.',
-    'With the blade running, slowly pour in the olive oil and process until the pesto is smooth. Add salt and pepper to taste.'
+    'Place the potatoes into a pan of salted boiling water and cook for 15 minutes or until tender when pierced with the tip of a knife. Drain and leave to cool for 2-3 minutes. ',
+    'Heat 10ml of the olive oil in a pan and fry the shallot for a few minutes until soft and transparent. Add the vinegar. Cook until it has reduced by half. Remove the pan from the heat and add the remaining olive oil and the thyme leaves.',
+    'To serve chop the potatoes and scatter on a large plate. Dress the salad leaves with a little of the shallot dressing and drizzle the remainder over the potatoes. Place the salad leaves on top of the potatoes.'
   ]
 }
 
@@ -43,7 +40,7 @@ function article() {
   recipeArticle.classList.add('recipes');
 
   const recipeName = document.createElement('h1');
-  recipeName.textContent = pesto['recipe'];
+  recipeName.textContent = salad['recipe'];
   
   const recipe = document.createElement('div');
   recipe.classList.add('recipe');
@@ -55,10 +52,10 @@ function article() {
   recipeStepsInfo.classList.add('recipe-steps');
   
   const recipeImage = new Image();
-  recipeImage.src = pesto['image'];
+  recipeImage.src = salad['image'];
 
   const recipeIngredients = document.createElement('ul');
-  pesto['ingredients'].forEach(ingredient => {
+  salad['ingredients'].forEach(ingredient => {
       const ingre = document.createElement('li');
       ingre.textContent = ingredient;
       recipeIngredients.appendChild(ingre);
@@ -66,7 +63,7 @@ function article() {
   );
 
   const recipeSteps = document.createElement('ol');
-  pesto['steps'].forEach(step => {
+  salad['steps'].forEach(step => {
       const ingre = document.createElement('li');
       ingre.textContent = step;
       recipeSteps.appendChild(ingre);

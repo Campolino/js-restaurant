@@ -2,6 +2,9 @@ import './style.css';
 
 import home from './pages/home';
 import pesto from './pages/pesto';
+import tempura from './pages/tempura';
+import salad from './pages/salad';
+import green from './pages/green';
 
 home();
 
@@ -16,13 +19,13 @@ cards.forEach(card => {
         pesto();
         break;
       case 'tempura':
-        pesto();
+        tempura();
         break;
       case 'salad':
-        pesto();
+        salad();
         break;
       case 'green':
-        pesto();
+        green();
         break;
       default:
         home();

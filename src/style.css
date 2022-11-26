@@ -51,6 +51,27 @@ article {
   gap: 10px;
 }
 
+/* --- RECIPES --- */
+.recipes {
+  display: block;
+}
+
+.recipes > h1 {
+  text-align: center;
+}
+
+.recipes > .recipe {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.recipe-ingredients > img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* --- CARDS --- */
 .card {
   border: 1px solid black;
   border-radius: 15px;

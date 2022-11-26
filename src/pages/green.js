@@ -1,26 +1,23 @@
 import header from './header';
 import section from './section';
 
-import pestoImage from '../img/beet-dandelion-pesto.jpg';
+import greenImage from '../img/dandelion-greens-and-onions.jpg';
 
-const pesto = {
-  'image': pestoImage,
-  'recipe': 'Dandelion Pumpkin Seed Pesto',
+const green = {
+  'image': greenImage,
+  'recipe': 'Sautéed Spicy Dandelion Greens',
   'ingredients': [
-    '3/4 cup unsalted hulled (green) pumpkin seeds',
-    '3 garlic cloves, minced',
-    '1/4 cup freshly grated Parmesan',
-    '1 bunch dandelion greens (about 2 cups, loosely packed)',
-    '1 tablespoon lemon juice',
-    '1/2 cup extra-virgin olive oil',
-    '1/2 teaspoon kosher salt',
-    'Black pepper, to taste'
+    '4 pounds dandelion greens, tough (lower) parts of stems discarded and leaves cut crosswise into 2-inch pieces',
+    '2 tablespoons extra-virgin olive oil, plus additional for drizzling',
+    '2 tablespoons unsalted butter',
+    '2 large onions, halved and thinly sliced',
+    '4 large garlic cloves, coarsely chopped',
+    '1 fresh hot Italian cherry pepper, seeded and minced, or 1/2 teaspoon crushed red pepper',
+    'Salt and freshly ground black pepper'
   ],
   'steps': [
-    'Preheat the oven to 350°F. Pour the pumpkin seeds onto a shallow-rimmed baking sheet and roast until just fragrant, about 5 minutes. Remove from the oven and allow to cool.',
-    'Pulse the garlic and pumpkin seeds together in the bowl of a food processor until very finely chopped.',
-    'Add Parmesan cheese, dandelion greens, and lemon juice and process continuously until combined. Stop the processor every now and again to scrape down the sides of the bowl. The pesto will be very thick and difficult to process after awhile — that\'s ok.',
-    'With the blade running, slowly pour in the olive oil and process until the pesto is smooth. Add salt and pepper to taste.'
+    'Cook greens in 2 batches in an 8-quart pot of well-salted boiling water, uncovered, until ribs are tender, about 10 minutes per batch. Scoop out each batch of greens as cooked with a skimmer or slotted spoon into a colander, then rinse under cold water to stop cooking. Drain well, gently pressing out excess water, and transfer to a bowl.',
+    'Heat oil and butter in cleaned pot over medium heat until foam subsides, then cook onions with garlic, cherry pepper, 1/2 teaspoon salt, and 1/4 teaspoon pepper, covered, stirring occasionally, until pale golden, about 8 minutes. Add greens and cook, covered, stirring occasionally, until onions are tender, 4 to 6 minutes. Transfer dandelion green mixture with a slotted spoon to a serving bowl and drizzle with additional oil.'
   ]
 }
 
@@ -43,7 +40,7 @@ function article() {
   recipeArticle.classList.add('recipes');
 
   const recipeName = document.createElement('h1');
-  recipeName.textContent = pesto['recipe'];
+  recipeName.textContent = green['recipe'];
   
   const recipe = document.createElement('div');
   recipe.classList.add('recipe');
@@ -55,10 +52,10 @@ function article() {
   recipeStepsInfo.classList.add('recipe-steps');
   
   const recipeImage = new Image();
-  recipeImage.src = pesto['image'];
+  recipeImage.src = green['image'];
 
   const recipeIngredients = document.createElement('ul');
-  pesto['ingredients'].forEach(ingredient => {
+  green['ingredients'].forEach(ingredient => {
       const ingre = document.createElement('li');
       ingre.textContent = ingredient;
       recipeIngredients.appendChild(ingre);
@@ -66,7 +63,7 @@ function article() {
   );
 
   const recipeSteps = document.createElement('ol');
-  pesto['steps'].forEach(step => {
+  green['steps'].forEach(step => {
       const ingre = document.createElement('li');
       ingre.textContent = step;
       recipeSteps.appendChild(ingre);
